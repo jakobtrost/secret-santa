@@ -31,8 +31,8 @@ const people = [
 // Generate a random encryption key
 // var globalKey = generateKey( 64 );
 // alert( globalKey );
-var globalKey = 'viZ8yMNNEvtpudMtWIZUqRaN8pzU1yviw03mfUdgU9Tkwg59VPFdW5H7Mlfpn0Ov'; // test
-// var globalKey = 'XtSLdYpYqulWBUHmr30sRCnoIKPc6PjXur2cXM3TmkuQ094JM9dg1xuIlx3Ujug5'; // live
+// var globalKey = 'viZ8yMNNEvtpudMtWIZUqRaN8pzU1yviw03mfUdgU9Tkwg59VPFdW5H7Mlfpn0Ov'; // test
+var globalKey = 'XtSLdYpYqulWBUHmr30sRCnoIKPc6PjXur2cXM3TmkuQ094JM9dg1xuIlx3Ujug5'; // live
 
 
 /**
