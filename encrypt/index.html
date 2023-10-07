@@ -7,7 +7,7 @@
 
 		<!-- CSS Stylesheets -->
 		<link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
-		<link rel="stylesheet" href="style.css?v=1.0">
+		<link rel="stylesheet" href="../style.css?v=1.0">
 	</head>
 
 	<body>
@@ -29,23 +29,22 @@
 	</footer>
 		
 	<!-- JS Scripts -->
-	<script src="functions.js?v=1.0"></script>
+	<script src="../functions.js?v=1.0"></script>
 	<script>
+		let assignments = assignNames( people );
+		while ( !checkAssignments( assignments ) ) {
+			assignments = assignNames( people );
+		}
 
-let assignments = assignNames( people );
-while ( !checkAssignments( assignments ) ) {
-	assignments = assignNames( people );
-}
+		// success!
+		console.log( "Everything worked fine! Final assignments:", assignments );
 
-// success!
-console.log( "Everything worked fine! Final assignments:", assignments );
+		// encrypt
+		const encryptedAssignments = encryptAssignments( assignments );
 
-// encrypt
-const encryptedAssignments = encryptAssignments( assignments );
-
-// create table
-createTable( 'names', encryptedAssignments );
-console.log( encryptedAssignments );
+		// create table
+		createTable( 'names', encryptedAssignments );
+		console.log( encryptedAssignments );
 
 	</script>
 </html>
