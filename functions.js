@@ -30,8 +30,9 @@ const people = [
 
 // Generate a random encryption key
 // var globalKey = generateKey( 64 );
-// console.log( globalKey );
-var globalKey = 'viZ8yMNNEvtpudMtWIZUqRaN8pzU1yviw03mfUdgU9Tkwg59VPFdW5H7Mlfpn0Ov';
+// alert( globalKey );
+var globalKey = 'viZ8yMNNEvtpudMtWIZUqRaN8pzU1yviw03mfUdgU9Tkwg59VPFdW5H7Mlfpn0Ov'; // test
+// var globalKey = 'XtSLdYpYqulWBUHmr30sRCnoIKPc6PjXur2cXM3TmkuQ094JM9dg1xuIlx3Ujug5'; // live
 
 
 /**
@@ -194,24 +195,20 @@ function createTable( divId, encryptedAssignments ) {
 }
 
 // Function to create input fields for decryption
-function createDecryptionInputs( divId ) {
-	const div = document.getElementById( divId );
-
-	// Create input fields for decryption
-	const inputDiv = document.createElement( 'div' );
-	inputDiv.innerHTML = `
-		<label for="inputEncrypted">Verschlüsselter Name:</label>
-		<input type="text" id="inputEncrypted" placeholder="abcxyz123456">
-		<button id="decryptButton">jetzt entschlüsseln</button>
-		<p id="decryptedName" style="margin-top:2em"></p>
-	`;
-	div.appendChild( inputDiv );
-
+function addDecryptionInputsActions() {
 	// Add event listener to decrypt button
 	const decryptButton = document.getElementById( 'decryptButton' );
 	decryptButton.addEventListener( 'click', () => {
-		const inputEncrypted = base64Decode( document.getElementById( 'inputEncrypted' ).value );
-		const decryptedName = decrypt( inputEncrypted, globalKey );
+		const inputDecrypted = document.getElementById( 'inputEncrypted' ).value;
+
+		if ( ! inputDecrypted ) {
+			const decryptedNameDisplay = document.getElementById( 'decryptedName' );
+			decryptedNameDisplay.innerHTML = `🚨 Fehler: Bitte gib einen verschlüsselten Namen ein 🚨`;
+			return;
+		}
+
+		const inputEncrypted = base64Decode( inputDecrypted );
+		const decryptedName  = decrypt( inputEncrypted, globalKey );
 		const decryptedNameDisplay = document.getElementById( 'decryptedName' );
 		decryptedNameDisplay.innerHTML = `Du hast dieses Jahr <strong>${ decryptedName }</strong> gezogen 🎁`;
 	} );
