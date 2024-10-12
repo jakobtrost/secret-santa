@@ -10,8 +10,8 @@ const people = [
 	"Jakob",
 	"Nina",
 	"Philipp",
-	"Sarah",
-	"Samuel",
+	// "Sarah",
+	// "Samuel",
 	"Ralph",
 	"Anett",
 	"Paula",
@@ -27,12 +27,78 @@ const people = [
 ];
 
 
+const exceptions = {
+	"Anette": [
+		"Laura",
+		"Paula"
+	],
+	"Richard": [
+		"Helmut G.",
+		"Hilga"
+	],
+	"Laura": [
+		"Anette"
+	],
+	"Jakob": [
+		"Philipp",
+		"Hilga"
+	],
+	"Nina": [
+		"Philipp",
+		"Christine"
+	],
+	"Philipp": [
+		"Jürgen",
+		"Nina"
+	],
+	"Ralph": [
+		"Helmut S.",
+		"Philipp"
+	],
+	"Anett": [
+		"Ralph",
+		"Jakob"
+	],
+	"Paula": [
+		"Jakob",
+		"Hilga"
+	],
+	"Christine": [
+		"Jakob",
+		"Paula"
+	],
+	"Helmut S.": [
+		"Laura",
+		"Christine"
+	],
+	"Florian": [
+		"Helmut G.",
+		"Ralph"
+	],
+	"Hilga": [
+		"Richard"
+	],
+	"Helmut G.": [
+		"Jürgen",
+		"Helmut S."
+	],
+	"Jürgen": [
+		"Ralph",
+		"Florian"
+	],
+	"Soo": [
+		"Florian"
+	]
+};
 
-// Generate a random encryption key
-// var globalKey = generateKey( 64 );
-// alert( globalKey );
-// var globalKey = 'viZ8yMNNEvtpudMtWIZUqRaN8pzU1yviw03mfUdgU9Tkwg59VPFdW5H7Mlfpn0Ov'; // test
-var globalKey = 'XtSLdYpYqulWBUHmr30sRCnoIKPc6PjXur2cXM3TmkuQ094JM9dg1xuIlx3Ujug5'; // live
+
+/**
+ * ========================================
+ * 
+ * Logic
+ * 
+ * ========================================
+ */
 
 
 /**
@@ -60,15 +126,40 @@ function assignNames( names ) {
  * Check if a key & value pair matches, retry if it is
  */
 function checkAssignments( assignments ) {
+
 	for ( let person in assignments ) {
+
 		const assignedPerson = assignments[ person ];
+
+		// return FALSE: if 2 people are assigned to each the same person
+		if ( Object.values( assignments ).filter( name => name === assignedPerson ).length > 1 ) {
+			console.error( "2 people are assigned to the same person:", assignments );
+			return false;
+		}
+
+		// return FALSE: if a person is assigned to themselves
 		if ( person === assignedPerson ) {
-			console.error( person + " is assigned to themselves:", assignments );
+			// console.error( person + " is assigned to themselves:", assignments );
+			return false;
+		}
+
+		// return FALSE: a person is assigned to an exception
+		if ( exceptions[ person ] && exceptions[ person ].includes( assignedPerson ) ) {
+			// console.error( person + " is assigned to an exception:", assignments );
 			return false;
 		}
 	}
 	return true;
 }
+
+
+/**
+ * ========================================
+ * 
+ * Encryption & Decryption
+ * 
+ * ========================================
+ */
 
 // Function to generate random padding characters
 function generateRandomPadding( length ) {
@@ -109,6 +200,14 @@ function decrypt( encryptedText, key ) {
 	return encrypt( encryptedText, key ); // XOR encryption is reversible
 }
 
+// Generate a random encryption key
+// var globalKey = generateKey( 64 );
+// alert( globalKey );
+
+// Saved global keys
+// var globalKey = 'viZ8yMNNEvtpudMtWIZUqRaN8pzU1yviw03mfUdgU9Tkwg59VPFdW5H7Mlfpn0Ov'; // test
+var globalKey = 'XtSLdYpYqulWBUHmr30sRCnoIKPc6PjXur2cXM3TmkuQ094JM9dg1xuIlx3Ujug5'; // live
+
 // Function to encrypt assignments and generate keys
 function encryptAssignments( assignments ) {
 	const encryptedAssignments = {};
@@ -118,7 +217,8 @@ function encryptAssignments( assignments ) {
 
 		encryptedAssignments[ person ] = {
 			name: assignedPerson,
-			encrypted: base64Encode( encryptedName )
+			encrypted: base64Encode( encryptedName ),
+			// encrypted: assignedPerson // test with clear names in the UI
 		};
 	}
 
@@ -137,6 +237,13 @@ function generateKey( length ) {
 }
 
 
+/**
+ * ========================================
+ * 
+ * User Interface & Output
+ * 
+ * ========================================
+ */
 
 /**
  * Function to create a table and append it to a given div
