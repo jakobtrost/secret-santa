@@ -29,35 +29,48 @@ const people = [
 
 const exceptions = {
 	"Anette": [
+		"Jürgen",
+		"Anett",
 		"Laura",
 		"Paula"
 	],
 	"Richard": [
 		"Helmut G.",
-		"Hilga"
+		"Hilga",
+		"Laura",
+		"Samuel"
 	],
 	"Laura": [
-		"Anette"
+		"Anette",
+		"Nina",
+		"Richard"
 	],
 	"Jakob": [
 		"Philipp",
-		"Hilga"
+		"Hilga",
+		"Anette",
+		"Samuel"
 	],
 	"Nina": [
 		"Philipp",
-		"Christine"
+		"Christine",
+		"Sarah",
+		"Richard"
 	],
 	"Philipp": [
 		"Jürgen",
-		"Nina"
+		"Nina",
+		"Sarah"
 	],
 	"Ralph": [
 		"Helmut S.",
-		"Philipp"
+		"Philipp",
+		"Florian"
 	],
 	"Anett": [
 		"Ralph",
-		"Jakob"
+		"Jakob",
+		"Nina"
 	],
 	"Paula": [
 		"Jakob",
@@ -65,26 +78,34 @@ const exceptions = {
 	],
 	"Christine": [
 		"Jakob",
-		"Paula"
+		"Paula",
+		"Sarah"
 	],
 	"Helmut S.": [
 		"Laura",
-		"Christine"
+		"Christine",
+		"Sarah"
 	],
 	"Florian": [
 		"Helmut G.",
-		"Ralph"
+		"Ralph",
+		"Samuel"
 	],
 	"Hilga": [
-		"Richard"
+		"Richard",
+		"Anett",
+		"Christine"
 	],
 	"Helmut G.": [
 		"Jürgen",
-		"Helmut S."
+		"Helmut S.",
+		"Nina",
+		"Anett"
 	],
 	"Jürgen": [
 		"Ralph",
-		"Florian"
+		"Florian",
+		"Laura"
 	],
 	"Soo": [
 		"Florian"

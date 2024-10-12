@@ -45,7 +45,13 @@
 
 		// encrypt
 		const encryptedAssignments = encryptAssignments( assignments );
-		// const encryptedAssignments = assignments;
+
+		// save assignments as JSON file at this folder
+		const a = document.createElement('a');
+		const file = new Blob([JSON.stringify(encryptedAssignments)], {type: 'application/json'});
+		a.href = URL.createObjectURL(file);
+		a.download = 'encryptedAssignments-2024.json';
+		a.click();
 
 		// create table
 		createTable( 'names', encryptedAssignments );
