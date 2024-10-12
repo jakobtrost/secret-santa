@@ -33,6 +33,8 @@
 	<!-- JS Scripts -->
 	<script src="../functions.js?v=1.0"></script>
 	<script>
+
+		// generate assignments
 		let assignments = assignNames( people );
 		count = 1;
 		while ( ! checkAssignments( assignments ) ) {
@@ -46,16 +48,18 @@
 		// encrypt
 		const encryptedAssignments = encryptAssignments( assignments );
 
-		// save assignments as JSON file at this folder
-		const a = document.createElement('a');
-		const file = new Blob([JSON.stringify(encryptedAssignments)], {type: 'application/json'});
-		a.href = URL.createObjectURL(file);
-		a.download = 'encryptedAssignments-2024.json';
-		a.click();
-
 		// create table
 		createTable( 'names', encryptedAssignments );
-		console.log( encryptedAssignments );
+		console.log( "Encrypted assignments: ", encryptedAssignments );
+
+		// download assignments as JSON file
+		if ( confirm("Die Verschlüsselung wurde erfolgreich durchgeführt. Möchtest du die Zuordnungen als JSON-Datei herunterladen?") ) {
+			const a = document.createElement('a');
+			const file = new Blob([JSON.stringify(encryptedAssignments)], {type: 'application/json'});
+			a.href = URL.createObjectURL(file);
+			a.download = 'encryptedAssignments-2024.json';
+			a.click();
+		}
 
 	</script>
 </html>
