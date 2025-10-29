@@ -10,8 +10,8 @@ const people = [
 	"Jakob",
 	"Nina",
 	"Philipp",
-	// "Sarah",
-	// "Samuel",
+	"Sarah",
+	"Samuel",
 	"Ralph",
 	"Anett",
 	"Paula",
@@ -32,83 +32,101 @@ const exceptions = {
 		"Jürgen",
 		"Anett",
 		"Laura",
-		"Paula"
+		"Paula",
+		"Nina"
 	],
 	"Richard": [
 		"Helmut G.",
 		"Hilga",
 		"Laura",
-		"Samuel"
+		"Samuel",
+		"Jürgen"
 	],
 	"Laura": [
 		"Anette",
 		"Nina",
-		"Richard"
+		"Richard",
+		"Jakob"
 	],
 	"Jakob": [
 		"Philipp",
 		"Hilga",
 		"Anette",
-		"Samuel"
+		"Samuel",
+		"Ralph"
 	],
 	"Nina": [
 		"Philipp",
 		"Christine",
 		"Sarah",
-		"Richard"
+		"Richard",
+		"Laura",
+		"Samuel" // exception
 	],
 	"Philipp": [
 		"Jürgen",
 		"Nina",
-		"Sarah"
+		"Sarah",
+		"Helmut G.",
+		"Samuel" // exception
 	],
 	"Ralph": [
 		"Helmut S.",
 		"Philipp",
-		"Florian"
+		"Florian",
+		"Anette"
 	],
 	"Anett": [
 		"Ralph",
 		"Jakob",
-		"Nina"
+		"Nina",
+		"Paula"
 	],
 	"Paula": [
 		"Jakob",
-		"Hilga"
+		"Hilga",
+		"Helmut S."
 	],
 	"Christine": [
 		"Jakob",
 		"Paula",
-		"Sarah"
+		"Sarah",
+		"Hilga"
 	],
 	"Helmut S.": [
 		"Laura",
 		"Christine",
-		"Sarah"
+		"Sarah",
+		"Florian"
 	],
 	"Florian": [
 		"Helmut G.",
 		"Ralph",
-		"Samuel"
+		"Samuel",
+		"Christine"
 	],
 	"Hilga": [
 		"Richard",
 		"Anett",
-		"Christine"
+		"Christine",
+		"Soo"
 	],
 	"Helmut G.": [
 		"Jürgen",
 		"Helmut S.",
 		"Nina",
-		"Anett"
+		"Anett",
+		"Richard"
 	],
 	"Jürgen": [
 		"Ralph",
 		"Florian",
-		"Laura"
+		"Laura",
+		"Philipp"
 	],
 	"Soo": [
-		"Florian"
+		"Florian",
+		"Anett"
 	]
 };
 
