@@ -33,27 +33,31 @@ const exceptions = {
 		"Anett",
 		"Laura",
 		"Paula",
-		"Nina"
+		"Nina",
+		"Samuel"
 	],
 	"Richard": [
 		"Helmut G.",
 		"Hilga",
 		"Laura",
 		"Samuel",
-		"Jürgen"
+		"Jürgen",
+		"Christine"
 	],
 	"Laura": [
 		"Anette",
 		"Nina",
 		"Richard",
-		"Jakob"
+		"Jakob",
+		"Paula"
 	],
 	"Jakob": [
 		"Philipp",
 		"Hilga",
 		"Anette",
 		"Samuel",
-		"Ralph"
+		"Ralph",
+		"Sarah"
 	],
 	"Nina": [
 		"Philipp",
@@ -61,72 +65,94 @@ const exceptions = {
 		"Sarah",
 		"Richard",
 		"Laura",
-		"Samuel" // exception
+		"Hilga"
 	],
 	"Philipp": [
 		"Jürgen",
 		"Nina",
 		"Sarah",
 		"Helmut G.",
-		"Samuel" // exception
+		"Richard"
+	],
+	"Sarah": [
+		"Helmut G.",
+		"Hilga",
+		"Helmut",
+		"Florian"
+	],
+	"Samuel": [
+		"Anette",
+		"Helmut G.",
+		"Soo",
+		"Laura"
 	],
 	"Ralph": [
 		"Helmut S.",
 		"Philipp",
 		"Florian",
-		"Anette"
+		"Anette",
+		"Anett"
 	],
 	"Anett": [
 		"Ralph",
 		"Jakob",
 		"Nina",
-		"Paula"
+		"Paula",
+		"Helmut G."
 	],
 	"Paula": [
 		"Jakob",
 		"Hilga",
-		"Helmut S."
+		"Helmut S.",
+		"Nina"
 	],
 	"Christine": [
 		"Jakob",
 		"Paula",
 		"Sarah",
-		"Hilga"
+		"Hilga",
+		"Helmut S."
 	],
 	"Helmut S.": [
 		"Laura",
 		"Christine",
 		"Sarah",
-		"Florian"
+		"Florian",
+		"Anette"
 	],
 	"Florian": [
 		"Helmut G.",
 		"Ralph",
 		"Samuel",
-		"Christine"
+		"Christine",
+		"Jürgen"
 	],
 	"Hilga": [
 		"Richard",
 		"Anett",
 		"Christine",
-		"Soo"
+		"Soo",
+		"Ralph"
 	],
 	"Helmut G.": [
 		"Jürgen",
 		"Helmut S.",
 		"Nina",
 		"Anett",
-		"Richard"
+		"Richard",
+		"Jakob"
 	],
 	"Jürgen": [
 		"Ralph",
 		"Florian",
 		"Laura",
-		"Philipp"
+		"Philipp",
+		"Soo"
 	],
 	"Soo": [
 		"Florian",
-		"Anett"
+		"Anett",
+		"Philipp"
 	]
 };
 
